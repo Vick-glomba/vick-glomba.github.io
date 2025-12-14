@@ -9,16 +9,13 @@
     content="GlombaStudio — Apps móviles útiles, simples y en evolución. Descubrí Huertero y seguí el desarrollo de Survival: Bunker." />
   <title>GlombaStudio — Developer</title>
   <link rel="stylesheet" href="./styles.css" />
-
   <meta property="og:title" content="GlombaStudio — Developer" />
   <meta property="og:description"
     content="Apps móviles útiles, simples y en evolución. Huertero (publicada) y Survival: Bunker (en desarrollo)." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/banner.jpg" />
   <meta property="og:url" content="https://vick-glomba.github.io/" />
-
   <link rel="icon" href="./assets/logo.png" />
-
 </head>
 
 <body>
@@ -40,8 +37,8 @@
         </button>
       </div>
     </div>
-  </header>
 
+  </header>
   <main id="top">
     <section class="hero">
       <div class="hero__bg" aria-hidden="true"></div>
@@ -119,13 +116,23 @@
         </div>
 
         <div class="grid">
+
+          <!--
+        (INTERNAL)
+        Asegurate de que existan estos archivos en /assets:
+        - huertero-icon.png
+        - huertero-shot.jpg
+        - bunker-icon.png
+        - bunker-shot.jpg
+      -->
+
           <!-- HUERTERO -->
           <article class="appCard">
             <div class="appCard__top">
               <div class="appIcon">
                 <img src="./assets/huertero-icon.png" alt="Huertero icon"
-                  onerror="this.style.display='none'; this.parentElement.classList.add('appIcon--fallback');" />
-                <div class="appIcon__fallback" aria-hidden="true">H</div>
+                  onerror="this.style.display='none'; this.parentElement.classList.add('appIcon--fallback'); this.nextElementSibling.style.display='flex';" />
+                <div class="appIcon__fallback" aria-hidden="true" style="display:none;">H</div>
               </div>
 
               <div class="appCard__titleBlock">
@@ -148,22 +155,25 @@
 
             <div class="appCard__media">
               <img src="./assets/huertero-shot.jpg" alt="Huertero screenshot" loading="lazy"
-                onerror="this.style.display='none'; this.parentElement.classList.add('appCard__media--fallback');" />
-              <div class="appCard__mediaFallback" data-i18n="apps.mediaFallback">
+                onerror="this.style.display='none'; this.parentElement.classList.add('appCard__media--fallback'); this.nextElementSibling.style.display='block';" />
+              <div class="appCard__mediaFallback" data-i18n="apps.mediaFallback" style="display:none;">
                 Agregá un screenshot en /assets para que esta tarjeta se vea premium.
               </div>
             </div>
 
             <div class="appCard__actions">
-              <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.glombastudio.huerta" target="_blank"
-                rel="noopener" data-i18n="apps.openPlay">Abrir en Google Play</a>
+              <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.glombastudio.huerta"
+                target="_blank" rel="noopener" data-i18n="apps.openPlay">
+                Abrir en Google Play
+              </a>
 
               <a class="btn btn--ghost" href="#updates" data-i18n="apps.seeUpdates">Ver novedades</a>
             </div>
 
-            <div class="appCard__note" data-i18n="apps.huertero.note">
-              Nota: reemplazá el link de Play Store en el archivo index.html.
-            </div>
+            <!--
+          (INTERNAL)
+          Link Play Store OK. Si algún día cambia el package name, actualizar este href.
+        -->
           </article>
 
           <!-- SURVIVAL: BUNKER -->
@@ -171,8 +181,8 @@
             <div class="appCard__top">
               <div class="appIcon">
                 <img src="./assets/bunker-icon.png" alt="Survival: Bunker icon"
-                  onerror="this.style.display='none'; this.parentElement.classList.add('appIcon--fallback');" />
-                <div class="appIcon__fallback" aria-hidden="true">S</div>
+                  onerror="this.style.display='none'; this.parentElement.classList.add('appIcon--fallback'); this.nextElementSibling.style.display='flex';" />
+                <div class="appIcon__fallback" aria-hidden="true" style="display:none;">S</div>
               </div>
 
               <div class="appCard__titleBlock">
@@ -195,8 +205,8 @@
 
             <div class="appCard__media">
               <img src="./assets/bunker-shot.jpg" alt="Survival: Bunker screenshot" loading="lazy"
-                onerror="this.style.display='none'; this.parentElement.classList.add('appCard__media--fallback');" />
-              <div class="appCard__mediaFallback" data-i18n="apps.mediaFallback">
+                onerror="this.style.display='none'; this.parentElement.classList.add('appCard__media--fallback'); this.nextElementSibling.style.display='block';" />
+              <div class="appCard__mediaFallback" data-i18n="apps.mediaFallback" style="display:none;">
                 Agregá un screenshot en /assets para que esta tarjeta se vea premium.
               </div>
             </div>
@@ -208,9 +218,10 @@
               <a class="btn btn--ghost" href="#updates" data-i18n="apps.trackProgress">Seguir progreso</a>
             </div>
 
-            <div class="appCard__note" data-i18n="apps.bunker.note">
-              Cuando publiques la primera versión, agregamos el botón a Google Play.
-            </div>
+            <!--
+          (INTERNAL)
+          Cuando publiques la primera versión, reemplazar el botón disabled por el link a Google Play.
+        -->
           </article>
         </div>
       </div>
@@ -233,7 +244,7 @@
               <div class="tlItem__date">2025-12</div>
               <div class="tlItem__title" data-i18n="updates.u1.t">Huertero — contenido semanal</div>
               <div class="tlItem__text" data-i18n="updates.u1.d">
-                Se agregan nuevos cultivos y mejoras continuas en la experiencia. (Editá este texto con tu update real.)
+                Se agregan nuevos cultivos y mejoras continuas en la experiencia.
               </div>
             </div>
           </div>
@@ -244,7 +255,7 @@
               <div class="tlItem__date">2025-12</div>
               <div class="tlItem__title" data-i18n="updates.u2.t">Survival: Bunker — avance</div>
               <div class="tlItem__text" data-i18n="updates.u2.d">
-                Progreso del loop principal y UI. (Editá este texto con el avance real de la semana.)
+                Progreso del loop principal y UI.
               </div>
             </div>
           </div>
@@ -257,6 +268,13 @@
             confianza.
           </div>
         </div>
+
+        <!--
+      (INTERNAL)
+      Recomendación: cada update semanal:
+      - Fecha (YYYY-MM)
+      - 1 línea por mejora grande (contenido/UX/estabilidad)
+    -->
       </div>
     </section>
 
@@ -326,10 +344,6 @@
                 TikTok
               </a>
             </div>
-
-            <div class="muted small" data-i18n="contact.socialHint">
-              Tip: si más adelante sumás YouTube, este bloque se amplía sin tocar el diseño.
-            </div>
           </div>
 
           <div class="contactCard">
@@ -342,15 +356,16 @@
               <a class="btn btn--primary" href="mailto:glombastudio@gmail.com" data-i18n="contact.ctaEmail">
                 Enviar email
               </a>
-              <a class="btn btn--ghost" href="https://play.google.com/store/apps/dev?id=6320056275611243905" target="_blank"
-                rel="noopener" data-i18n="contact.ctaDev">
+              <a class="btn btn--ghost" href="https://play.google.com/store/apps/dev?id=6320056275611243905"
+                target="_blank" rel="noopener" data-i18n="contact.ctaDev">
                 Ver perfil en Google Play
               </a>
             </div>
 
-            <div class="muted small" data-i18n="contact.devNote">
-              Reemplazá el link del perfil de developer cuando lo tengas a mano.
-            </div>
+            <!--
+          (INTERNAL)
+          Si alguna vez cambiás el perfil/ID de developer, actualizar este href.
+        -->
           </div>
         </div>
       </div>
@@ -370,214 +385,16 @@
           <a class="footer__link" href="mailto:glombastudio@gmail.com" data-i18n="footer.support">Soporte</a>
         </div>
       </div>
+
+      <!--
+    (INTERNAL)
+    El link "Privacidad" está en "#".
+    Si querés, creamos privacy.html dentro del repo y lo linkeamos acá.
+  -->
     </footer>
+
   </main>
-
-  <script>
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // i18n dictionary
-    const I18N = {
-      es: {
-        "nav.apps": "Apps",
-        "nav.updates": "Novedades",
-        "nav.about": "Enfoque",
-        "nav.contact": "Contacto",
-
-        "hero.badge": "Developer Studio",
-        "hero.titleA": "Apps móviles",
-        "hero.titleB": "útiles, simples",
-        "hero.titleC": "y en evolución.",
-        "hero.subtitle":
-          "Construyo productos prácticos con foco en experiencia, rendimiento y mejoras constantes. Mirá las apps publicadas y el progreso de las próximas.",
-        "hero.ctaApps": "Ver apps",
-        "hero.ctaUpdates": "Ver avances",
-        "hero.meta1.k": "App publicada",
-        "hero.meta2.k": "En desarrollo",
-        "hero.bannerFallback": "Developer website — Google Play",
-        "hero.chip1": "Apps & enlaces a Play Store",
-        "hero.chip2": "Novedades semanales",
-        "hero.chip3": "Redes y contacto",
-
-        "apps.title": "Apps",
-        "apps.desc":
-          "Productos reales, mantenidos activamente. Acceso directo a Google Play y seguimiento del desarrollo.",
-        "apps.openPlay": "Abrir en Google Play",
-        "apps.seeUpdates": "Ver novedades",
-        "apps.comingSoon": "Próximamente",
-        "apps.trackProgress": "Seguir progreso",
-        "apps.mediaFallback": "Agregá un screenshot en /assets para que esta tarjeta se vea premium.",
-
-        "apps.huertero.status": "Disponible en Google Play",
-        "apps.huertero.summary":
-          "Una app para organizar tu huerta y tus cultivos, con contenido que crece semana a semana.",
-        "apps.huertero.b1": "Catálogo de cultivos en expansión",
-        "apps.huertero.b2": "Uso offline-first (consultas rápidas)",
-        "apps.huertero.b3": "Mejoras constantes basadas en feedback",
-        "apps.huertero.note": "Nota: reemplazá el link de Play Store en el archivo index.html.",
-
-        "apps.bunker.status": "En desarrollo (saga)",
-        "apps.bunker.summary":
-          "Experiencia survival narrativa y modular. Esta entrega inicia la saga “Bunker”.",
-        "apps.bunker.b1": "Diseño modular para futuras entregas",
-        "apps.bunker.b2": "Progreso persistente y eventos diarios",
-        "apps.bunker.b3": "Iteración constante con foco en UX",
-        "apps.bunker.note": "Cuando publiques la primera versión, agregamos el botón a Google Play.",
-
-        "updates.title": "Novedades",
-        "updates.desc":
-          "Actualizaciones públicas para mostrar que las apps están vivas. Mantené esto semanalmente (2–4 líneas por update).",
-        "updates.u1.t": "Huertero — contenido semanal",
-        "updates.u1.d": "Se agregan nuevos cultivos y mejoras continuas en la experiencia. (Editá este texto con tu update real.)",
-        "updates.u2.t": "Survival: Bunker — avance",
-        "updates.u2.d": "Progreso del loop principal y UI. (Editá este texto con el avance real de la semana.)",
-        "updates.calloutTitle": "Sugerencia de uso",
-        "updates.calloutText":
-          "Cada semana agregá un item. Es el “proof of work” que convierte esta página en una herramienta real de confianza.",
-
-        "about.title": "Enfoque",
-        "about.desc": "Construcción enfocada en utilidad, claridad y mantenimiento continuo.",
-        "about.f1.h": "Simplicidad y performance",
-        "about.f1.p": "Apps rápidas, legibles y sin sobrecarga innecesaria. Menos fricción, más uso real.",
-        "about.f2.h": "Iteración constante",
-        "about.f2.p": "Actualizaciones frecuentes con mejoras concretas: contenido, UX y estabilidad.",
-        "about.f3.h": "Contenido vivo",
-        "about.f3.p": "Catálogos y sistemas que crecen, sin inflar la app con “relleno”.",
-        "about.f4.h": "Transparencia",
-        "about.f4.p": "Esta página se mantiene como registro público de avances y apps publicadas.",
-
-        "contact.title": "Redes y contacto",
-        "contact.desc": "Seguime para ver avances y anuncios, o escribime para soporte y consultas.",
-        "contact.socials": "Redes",
-        "contact.socialHint": "Tip: si más adelante sumás YouTube, este bloque se amplía sin tocar el diseño.",
-        "contact.email": "Email",
-        "contact.ctaEmail": "Enviar email",
-        "contact.ctaDev": "Ver perfil en Google Play",
-        "contact.devNote": "Reemplazá el link del perfil de developer cuando lo tengas a mano.",
-
-        "footer.sub": "Developer website for Google Play — Apps, updates y contacto.",
-        "footer.privacy": "Privacidad",
-        "footer.support": "Soporte",
-      },
-
-      en: {
-        "nav.apps": "Apps",
-        "nav.updates": "Updates",
-        "nav.about": "Approach",
-        "nav.contact": "Contact",
-
-        "hero.badge": "Developer Studio",
-        "hero.titleA": "Mobile apps",
-        "hero.titleB": "useful, simple",
-        "hero.titleC": "and evolving.",
-        "hero.subtitle":
-          "I build practical products focused on user experience, performance and continuous improvements. Explore released apps and track what’s coming next.",
-        "hero.ctaApps": "View apps",
-        "hero.ctaUpdates": "See updates",
-        "hero.meta1.k": "Released app",
-        "hero.meta2.k": "In development",
-        "hero.bannerFallback": "Developer website — Google Play",
-        "hero.chip1": "Apps & Google Play links",
-        "hero.chip2": "Weekly updates",
-        "hero.chip3": "Socials & contact",
-
-        "apps.title": "Apps",
-        "apps.desc":
-          "Real products, actively maintained. Direct access to Google Play and public progress tracking.",
-        "apps.openPlay": "Open in Google Play",
-        "apps.seeUpdates": "See updates",
-        "apps.comingSoon": "Coming soon",
-        "apps.trackProgress": "Track progress",
-        "apps.mediaFallback": "Add a screenshot in /assets to make this card look premium.",
-
-        "apps.huertero.status": "Available on Google Play",
-        "apps.huertero.summary":
-          "A gardening app to organize your crops, with content that grows week after week.",
-        "apps.huertero.b1": "Expanding crop catalog",
-        "apps.huertero.b2": "Offline-first usage (fast browsing)",
-        "apps.huertero.b3": "Continuous improvements based on feedback",
-        "apps.huertero.note": "Note: replace the Google Play link inside index.html.",
-
-        "apps.bunker.status": "In development (series)",
-        "apps.bunker.summary":
-          "A modular, narrative survival experience. This entry starts the “Bunker” saga.",
-        "apps.bunker.b1": "Modular design for future entries",
-        "apps.bunker.b2": "Persistent progress and daily events",
-        "apps.bunker.b3": "Iterative development focused on UX",
-        "apps.bunker.note": "Once released, we’ll add the Google Play button here.",
-
-        "updates.title": "Updates",
-        "updates.desc":
-          "Public updates to show the apps are alive. Keep this weekly (2–4 lines per update).",
-        "updates.u1.t": "Huertero — weekly content",
-        "updates.u1.d": "New crops and continuous UX improvements. (Replace this with your real weekly update.)",
-        "updates.u2.t": "Survival: Bunker — progress",
-        "updates.u2.d": "Core loop and UI progress. (Replace this with your real weekly update.)",
-        "updates.calloutTitle": "Suggested workflow",
-        "updates.calloutText":
-          "Add one item every week. This becomes public proof of work and builds trust over time.",
-
-        "about.title": "Approach",
-        "about.desc": "Built around usefulness, clarity and long-term maintenance.",
-        "about.f1.h": "Simplicity & performance",
-        "about.f1.p": "Fast, readable apps without unnecessary overhead. Less friction, more real usage.",
-        "about.f2.h": "Continuous iteration",
-        "about.f2.p": "Frequent updates with concrete wins: content, UX, stability.",
-        "about.f3.h": "Living content",
-        "about.f3.p": "Catalogs and systems that grow without bloating the app with filler.",
-        "about.f4.h": "Transparency",
-        "about.f4.p": "This page stays as a public record of releases and progress.",
-
-        "contact.title": "Socials & contact",
-        "contact.desc": "Follow for updates and announcements, or reach out for support and inquiries.",
-        "contact.socials": "Socials",
-        "contact.socialHint": "Tip: adding YouTube later won’t require redesigning anything.",
-        "contact.email": "Email",
-        "contact.ctaEmail": "Send email",
-        "contact.ctaDev": "View Google Play developer profile",
-        "contact.devNote": "Replace the developer profile link when you have it handy.",
-
-        "footer.sub": "Developer website for Google Play — apps, updates and contact.",
-        "footer.privacy": "Privacy",
-        "footer.support": "Support",
-      },
-    };
-
-    // Language state
-    const langBtn = document.getElementById("langBtn");
-    const saved = localStorage.getItem("gs_lang");
-    let lang = saved || "es";
-
-    function applyLang(next) {
-      lang = next;
-      document.documentElement.lang = lang === "es" ? "es" : "en";
-      localStorage.setItem("gs_lang", lang);
-
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        const val = I18N[lang][key];
-        if (val) el.textContent = val;
-      });
-
-      // button visuals
-      const pills = langBtn.querySelectorAll(".lang__pill");
-      if (lang === "es") {
-        pills[0].classList.remove("lang__pill--muted");
-        pills[1].classList.add("lang__pill--muted");
-      } else {
-        pills[0].classList.add("lang__pill--muted");
-        pills[1].classList.remove("lang__pill--muted");
-      }
-    }
-
-    langBtn.addEventListener("click", () => {
-      applyLang(lang === "es" ? "en" : "es");
-    });
-
-    applyLang(lang);
-  </script>
-
+  <script> document.getElementById("year").textContent = new Date().getFullYear(); const I18N = { es: { "nav.apps": "Apps", "nav.updates": "Novedades", "nav.about": "Enfoque", "nav.contact": "Contacto", "hero.badge": "Developer Studio", "hero.titleA": "Apps móviles", "hero.titleB": "útiles, simples", "hero.titleC": "y en evolución.", "hero.subtitle": "Construyo productos prácticos con foco en experiencia, rendimiento y mejoras constantes. Mirá las apps publicadas y el progreso de las próximas.", "hero.ctaApps": "Ver apps", "hero.ctaUpdates": "Ver avances", "hero.meta1.k": "App publicada", "hero.meta2.k": "En desarrollo", "hero.bannerFallback": "Developer website — Google Play", "hero.chip1": "Apps & enlaces a Play Store", "hero.chip2": "Novedades semanales", "hero.chip3": "Redes y contacto", "apps.title": "Apps", "apps.desc": "Productos reales, mantenidos activamente. Acceso directo a Google Play y seguimiento del desarrollo.", "apps.openPlay": "Abrir en Google Play", "apps.seeUpdates": "Ver novedades", "apps.comingSoon": "Próximamente", "apps.trackProgress": "Seguir progreso", "apps.huertero.status": "Disponible en Google Play", "apps.huertero.summary": "Una app para organizar tu huerta y tus cultivos, con contenido que crece semana a semana.", "apps.huertero.b1": "Catálogo de cultivos en expansión", "apps.huertero.b2": "Uso offline-first (consultas rápidas)", "apps.huertero.b3": "Mejoras constantes basadas en feedback", "apps.bunker.status": "En desarrollo (saga)", "apps.bunker.summary": "Experiencia survival narrativa y modular. Esta entrega inicia la saga “Bunker”.", "apps.bunker.b1": "Diseño modular para futuras entregas", "apps.bunker.b2": "Progreso persistente y eventos diarios", "apps.bunker.b3": "Iteración constante con foco en UX", "updates.title": "Novedades", "updates.desc": "Actualizaciones públicas para mostrar que las apps están vivas. Mantené esto semanalmente (2–4 líneas por update).", "updates.u1.t": "Huertero — contenido semanal", "updates.u1.d": "Se agregan nuevos cultivos y mejoras continuas en la experiencia.", "updates.u2.t": "Survival: Bunker — avance", "updates.u2.d": "Progreso del loop principal y UI.", "updates.calloutTitle": "Sugerencia de uso", "updates.calloutText": "Cada semana agregá un item. Es el “proof of work” que convierte esta página en una herramienta real de confianza.", "about.title": "Enfoque", "about.desc": "Construcción enfocada en utilidad, claridad y mantenimiento continuo.", "about.f1.h": "Simplicidad y performance", "about.f1.p": "Apps rápidas, legibles y sin sobrecarga innecesaria. Menos fricción, más uso real.", "about.f2.h": "Iteración constante", "about.f2.p": "Actualizaciones frecuentes con mejoras concretas: contenido, UX y estabilidad.", "about.f3.h": "Contenido vivo", "about.f3.p": "Catálogos y sistemas que crecen, sin inflar la app con “relleno”.", "about.f4.h": "Transparencia", "about.f4.p": "Esta página se mantiene como registro público de avances y apps publicadas.", "contact.title": "Redes y contacto", "contact.desc": "Seguime para ver avances y anuncios, o escribime para soporte y consultas.", "contact.socials": "Redes", "contact.email": "Email", "contact.ctaEmail": "Enviar email", "contact.ctaDev": "Ver perfil en Google Play", "footer.sub": "Developer website for Google Play — Apps, updates y contacto.", "footer.privacy": "Privacidad", "footer.support": "Soporte", }, en: { "nav.apps": "Apps", "nav.updates": "Updates", "nav.about": "Approach", "nav.contact": "Contact", "hero.badge": "Developer Studio", "hero.titleA": "Mobile apps", "hero.titleB": "useful, simple", "hero.titleC": "and evolving.", "hero.subtitle": "I build practical products focused on user experience, performance and continuous improvements. Explore released apps and track what’s coming next.", "hero.ctaApps": "View apps", "hero.ctaUpdates": "See updates", "hero.meta1.k": "Released app", "hero.meta2.k": "In development", "hero.bannerFallback": "Developer website — Google Play", "hero.chip1": "Apps & Google Play links", "hero.chip2": "Weekly updates", "hero.chip3": "Socials & contact", "apps.title": "Apps", "apps.desc": "Real products, actively maintained. Direct access to Google Play and public progress tracking.", "apps.openPlay": "Open in Google Play", "apps.seeUpdates": "See updates", "apps.comingSoon": "Coming soon", "apps.trackProgress": "Track progress", "apps.huertero.status": "Available on Google Play", "apps.huertero.summary": "A gardening app to organize your crops, with content that grows week after week.", "apps.huertero.b1": "Expanding crop catalog", "apps.huertero.b2": "Offline-first usage (fast browsing)", "apps.huertero.b3": "Continuous improvements based on feedback", "apps.bunker.status": "In development (series)", "apps.bunker.summary": "A modular, narrative survival experience. This entry starts the “Bunker” saga.", "apps.bunker.b1": "Modular design for future entries", "apps.bunker.b2": "Persistent progress and daily events", "apps.bunker.b3": "Iterative development focused on UX", "updates.title": "Updates", "updates.desc": "Public updates to show the apps are alive. Keep this weekly (2–4 lines per update).", "updates.u1.t": "Huertero — weekly content", "updates.u1.d": "New crops and continuous UX improvements.", "updates.u2.t": "Survival: Bunker — progress", "updates.u2.d": "Core loop and UI progress.", "updates.calloutTitle": "Suggested workflow", "updates.calloutText": "Add one item every week. This becomes public proof of work and builds trust over time.", "about.title": "Approach", "about.desc": "Built around usefulness, clarity and long-term maintenance.", "about.f1.h": "Simplicity & performance", "about.f1.p": "Fast, readable apps without unnecessary overhead. Less friction, more real usage.", "about.f2.h": "Continuous iteration", "about.f2.p": "Frequent updates with concrete wins: content, UX, stability.", "about.f3.h": "Living content", "about.f3.p": "Catalogs and systems that grow without bloating the app with filler.", "about.f4.h": "Transparency", "about.f4.p": "This page stays as a public record of releases and progress.", "contact.title": "Socials & contact", "contact.desc": "Follow for updates and announcements, or reach out for support and inquiries.", "contact.socials": "Socials", "contact.email": "Email", "contact.ctaEmail": "Send email", "contact.ctaDev": "View Google Play developer profile", "footer.sub": "Developer website for Google Play — apps, updates and contact.", "footer.privacy": "Privacy", "footer.support": "Support", }, }; const langBtn = document.getElementById("langBtn"); const saved = localStorage.getItem("gs_lang"); let lang = saved || "es"; function applyLang(next) { lang = next; document.documentElement.lang = lang === "es" ? "es" : "en"; localStorage.setItem("gs_lang", lang); document.querySelectorAll("[data-i18n]").forEach((el) => { const key = el.getAttribute("data-i18n"); const val = I18N[lang][key]; if (val) el.textContent = val; }); const pills = langBtn.querySelectorAll(".lang__pill"); if (lang === "es") { pills[0].classList.remove("lang__pill--muted"); pills[1].classList.add("lang__pill--muted"); } else { pills[0].classList.add("lang__pill--muted"); pills[1].classList.remove("lang__pill--muted"); } } langBtn.addEventListener("click", () => { applyLang(lang === "es" ? "en" : "es"); }); applyLang(lang); </script>
 </body>
 
 </html>
