@@ -773,3 +773,42 @@ img {
         font-size: 34px;
     }
 }
+
+/* === MOBILE SCREENSHOTS (APP CARDS) === */
+
+.appCard__media {
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Contenedor tipo teléfono */
+.appCard__media--mobile {
+  max-width: 260px;            /* ancho visual del “teléfono” */
+  aspect-ratio: 9 / 16;        /* formato móvil */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Imagen del screenshot */
+.appCard__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* llena el frame como un device */
+  display: block;
+}
+
+/* Sombra sutil tipo device */
+.appCard__media--mobile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.08),
+    0 10px 30px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
