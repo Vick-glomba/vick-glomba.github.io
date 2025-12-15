@@ -787,7 +787,7 @@ img {
 
 /* Contenedor tipo teléfono */
 .appCard__media--mobile {
-  max-width: 260px;            /* ancho visual del “teléfono” */
+  max-width: 300px;      /* ancho visual del “teléfono” */
   aspect-ratio: 9 / 16;        /* formato móvil */
   margin-left: auto;
   margin-right: auto;
