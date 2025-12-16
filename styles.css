@@ -851,3 +851,24 @@ img {
   }
 }
 
+/* === FIX CAROUSEL SIZE INSIDE appCard__media--mobile === */
+
+/* en tu CSS actual appCard__media es flex (centra)【:contentReference[oaicite:3]{index=3}】
+   Para el “teléfono”, necesitamos layout normal para que el carrusel llene el frame. */
+.appCard__media--mobile {
+  display: block;
+}
+
+/* Hacemos que el carrusel llene el frame por posicionamiento, no por height:100% */
+.appCard__media--mobile .carousel {
+  position: absolute;
+  inset: 0;
+}
+
+/* viewport/track/slides ocupan todo el frame */
+.appCard__media--mobile .carousel__viewport,
+.appCard__media--mobile .carousel__track,
+.appCard__media--mobile .carousel__slide {
+  height: 100%;
+}
+
