@@ -812,3 +812,42 @@ img {
     0 10px 30px rgba(0,0,0,0.6);
   pointer-events: none;
 }
+
+/* === CAROUSEL (AUTO-LOOP) === */
+.carousel {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px; /* respeta el frame tipo teléfono */
+}
+
+.carousel__track {
+  height: 100%;
+  display: flex;
+  will-change: transform;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Opcional: respeta reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .carousel__track {
+    transition: none !important;
+  }
+}
+
