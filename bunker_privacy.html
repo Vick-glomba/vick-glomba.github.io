@@ -355,6 +355,60 @@
         html[data-lang="en"] [data-lang-block="en"] {
             display: block;
         }
+
+        /* ===== Responsive: header usable en móvil (evita menú en columna) ===== */
+        @media (max-width: 720px) {
+            .header-inner {
+                padding: 10px 12px;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .brand {
+                min-width: 0;
+                /* evita forzar anchos */
+                flex: 1 1 auto;
+            }
+
+            .lang {
+                flex: 0 0 auto;
+            }
+
+            /* Menú en una sola fila con scroll horizontal */
+            nav {
+                order: 3;
+                width: 100%;
+                flex-wrap: nowrap;
+                /* clave: no wrap */
+                justify-content: flex-start;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                gap: 8px;
+                padding-bottom: 6px;
+            }
+
+            nav a {
+                white-space: nowrap;
+                /* clave: no cortar texto */
+                font-size: 13px;
+                padding: 7px 10px;
+            }
+
+            /* Ocultar scrollbar (sin romper scroll) */
+            nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            nav {
+                scrollbar-width: none;
+            }
+
+            /* Compensar el header más alto (ahora son 2 filas) */
+            main {
+                padding-top: calc(26px + 118px);
+            }
+        }
     </style>
 </head>
 
