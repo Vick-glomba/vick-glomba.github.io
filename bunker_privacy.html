@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Política de Privacidad | Survival: Bunker</title>
+  <meta name="description" content="Política de privacidad de Survival: Bunker (GlombaStudio)." />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --bg0:#070a0f;
+      --bg1:#0b1018;
+      --panel:#0f1622;
+      --text:#e6edf6;
+      --muted:#a7b3c7;
+      --muted2:#7f8aa1;
+      --border:rgba(255,255,255,.08);
+      --shadow: 0 14px 42px rgba(0,0,0,.45);
+      --accent:#7aa7ff;
+      --accent2:#6b5cff;
+      --radius:18px;
+      --radius2:14px;
+      --max:980px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(900px 420px at 16% 4%, rgba(122,167,255,.20), transparent 55%),
+        radial-gradient(900px 420px at 78% 18%, rgba(107,92,255,.16), transparent 55%),
+        radial-gradient(900px 520px at 72% 84%, rgba(122,167,255,.08), transparent 58%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:saturate(1.15) blur(10px);
+      background: rgba(7,10,15,.62);
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:220px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(122,167,255,.12);
+    }
+    .brand b{letter-spacing:.2px}
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    nav a{
+      color:var(--muted);
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    nav a:hover{
+      color:var(--text);
+      border-color:var(--border);
+      background:rgba(255,255,255,.03);
+      text-decoration:none;
+    }
+
+    main{max-width:var(--max); margin:0 auto; padding:26px 18px 70px}
+
+    .hero{padding:18px 0 10px}
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+    }
+    h1{
+      margin:14px 0 8px;
+      font-size:38px;
+      line-height:1.15;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width:860px;
+    }
+    .meta{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      color:var(--muted2);
+      font-size:13px;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+
+    .card{
+      margin-top:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding:16px 18px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      border-bottom:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(122,167,255,.08), transparent);
+    }
+    .card .hd h2{margin:0; font-size:18px; letter-spacing:-.2px}
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .card .bd{padding:16px 18px 18px}
+    .card .bd h3{margin:16px 0 8px; font-size:15px; letter-spacing:-.1px}
+    .card .bd p{margin:8px 0; color:var(--muted)}
+    .card .bd ul{margin:8px 0 0; padding-left:18px; color:var(--muted)}
+    .note{
+      margin-top:12px;
+      padding:12px 12px;
+      border-radius:var(--radius2);
+      border:1px dashed rgba(122,167,255,.28);
+      background: rgba(122,167,255,.06);
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    footer{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+      color:var(--muted2);
+      font-size:13px;
+    }
+
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      border-radius:999px;
+      padding:6px 10px;
+      color:var(--muted);
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <b>GlombaStudio</b>
+    </div>
+
+    <nav aria-label="Secciones">
+      <a href="#resumen">Resumen</a>
+      <a href="#datos">Datos</a>
+      <a href="#ads">Publicidad</a>
+      <a href="#firebase">Firebase</a>
+      <a href="#notificaciones">Notificaciones</a>
+      <a href="#derechos">Tus opciones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="kicker">
+      <span class="dot" aria-hidden="true" style="width:8px;height:8px;box-shadow:none"></span>
+      Documento legal — Política de Privacidad
+    </span>
+
+    <h1>Política de Privacidad — Survival: Bunker</h1>
+
+    <p class="lead">
+      Esta política describe cómo se maneja la información al usar <b>Survival: Bunker</b> (la “App”),
+      desarrollada por <b>GlombaStudio</b> (el “Desarrollador”).
+      La App no requiere crear una cuenta para jugar.
+    </p>
+
+    <div class="meta">
+      <span>Última actualización: <span class="mono">08/01/26</span></span>
+      <span>Paquete: <span class="mono">com.glombastudio.bunker</span></span>
+      <span>Web: <a href="https://glombastudio.com" target="_blank" rel="noopener">https://glombastudio.com</a></span>
+    </div>
+
+    <div class="pill" aria-label="Componentes">
+      <span class="chip">Anuncios: Google AdMob</span>
+      <span class="chip">Analítica/Crash: Firebase</span>
+      <span class="chip">Notificaciones: Firebase Cloud Messaging</span>
+    </div>
+  </section>
+
+  <article class="card" id="resumen">
+    <div class="hd">
+      <h2>1) Resumen</h2>
+      <span class="tag">Lectura rápida</span>
+    </div>
+    <div class="bd">
+      <ul>
+        <li>La App guarda progreso y configuraciones <b>localmente</b> en tu dispositivo.</li>
+        <li>La App muestra anuncios mediante <b>Google AdMob</b>. AdMob puede procesar identificadores publicitarios y datos técnicos para servir anuncios, medir rendimiento y prevenir fraude.</li>
+        <li>La App usa <b>Firebase</b> (Analytics y Crashlytics) para entender uso general y mejorar estabilidad.</li>
+        <li>La App puede usar <b>Firebase Cloud Messaging (FCM)</b> para notificaciones. No operamos servidor propio para esto; la entrega se realiza a través de la infraestructura de Google/Firebase.</li>
+        <li>No vendemos información personal.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="card" id="datos">
+    <div class="hd">
+      <h2>2) Información que se guarda o procesa</h2>
+      <span class="tag">Transparencia</span>
+    </div>
+    <div class="bd">
+      <h3>2.1 Datos de juego (almacenamiento local)</h3>
+      <p>
+        La App guarda en el dispositivo información necesaria para funcionar y mantener tu experiencia de juego.
+        Esto puede incluir progreso, estado del día, inventario/recursos, configuraciones y preferencias.
+      </p>
+      <p class="note">
+        Estos datos quedan en tu dispositivo y se eliminan al desinstalar la App o al borrar sus datos desde Android.
+      </p>
+
+      <h3>2.2 Datos técnicos y de uso (a través de Google: AdMob y Firebase)</h3>
+      <p>
+        Para anuncios, medición y estabilidad, la App utiliza servicios de Google que pueden procesar información técnica y de uso.
+        Ejemplos típicos de datos tratados por estos servicios:
+      </p>
+      <ul>
+        <li><b>Identificadores</b>: identificador publicitario de Android (Advertising ID) y/o identificadores de instancia del SDK.</li>
+        <li><b>Datos del dispositivo</b>: modelo, versión de Android, idioma, zona horaria aproximada, datos de rendimiento.</li>
+        <li><b>Datos de uso</b>: eventos generales (por ejemplo, pantallas/acciones agregadas), métricas de interacción y sesiones.</li>
+        <li><b>Datos de diagnóstico</b>: informes de fallos (crashes), stack traces y señales de rendimiento para corregir errores.</li>
+        <li><b>Datos de red</b>: IP y datos técnicos necesarios para entregar anuncios y servicios (procesamiento por el proveedor).</li>
+      </ul>
+      <p>
+        La App no te solicita nombre real, documento, dirección ni teléfono para jugar.
+      </p>
+    </div>
+  </article>
+
+  <article class="card" id="ads">
+    <div class="hd">
+      <h2>3) Publicidad (Google AdMob)</h2>
+      <span class="tag">Anuncios</span>
+    </div>
+    <div class="bd">
+      <p>
+        La App utiliza <b>Google AdMob</b> para mostrar anuncios, medir su rendimiento, limitar frecuencia y ayudar a prevenir fraude.
+        Para ello, AdMob puede procesar datos técnicos e identificadores (ver sección 2.2).
+      </p>
+      <h3>3.1 Anuncios personalizados y consentimiento</h3>
+      <p>
+        Dependiendo de tu región y configuración, los anuncios pueden ser personalizados o no personalizados.
+        Podés gestionar preferencias de privacidad desde Android (por ejemplo, restablecer el Advertising ID o controles de anuncios, según la versión del sistema y servicios de Google).
+      </p>
+      <p class="note">
+        En determinadas jurisdicciones (por ejemplo, EEE/Reino Unido), puede mostrarse un diálogo de consentimiento para anuncios y medición conforme a requisitos regulatorios.
+      </p>
+      <p>
+        Política de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
+      </p>
+    </div>
+  </article>
+
+  <article class="card" id="firebase">
+    <div class="hd">
+      <h2>4) Firebase (Analytics y Crashlytics)</h2>
+      <span class="tag">Métricas & estabilidad</span>
+    </div>
+    <div class="bd">
+      <h3>4.1 Firebase Analytics</h3>
+      <p>
+        Usamos Firebase Analytics para entender el uso general de la App (por ejemplo, métricas agregadas de interacción y sesiones)
+        y así mejorar experiencia, balance y rendimiento.
+      </p>
+
+      <h3>4.2 Firebase Crashlytics</h3>
+      <p>
+        Usamos Crashlytics para detectar errores, crashes y problemas de estabilidad. Esto puede incluir información técnica
+        del dispositivo y el estado del proceso al momento del fallo (por ejemplo, stack traces).
+      </p>
+
+      <p>
+        Privacidad de Firebase: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a>
+      </p>
+    </div>
+  </article>
+
+  <article class="card" id="notificaciones">
+    <div class="hd">
+      <h2>5) Notificaciones (Firebase Cloud Messaging)</h2>
+      <span class="tag">FCM</span>
+    </div>
+    <div class="bd">
+      <p>
+        La App puede enviar notificaciones mediante <b>Firebase Cloud Messaging (FCM)</b>, por ejemplo, comunicados generales.
+        El mecanismo de entrega lo provee Google/Firebase.
+      </p>
+      <h3>5.1 Topics y tokens</h3>
+      <p>
+        Para entregar notificaciones, FCM utiliza un <b>token de mensajería</b> asociado a la instalación de la App en tu dispositivo.
+        Este token se gestiona como parte del servicio de FCM.
+      </p>
+      <ul>
+        <li>El Desarrollador <b>no opera un servidor propio</b> para almacenar tokens ni administrar una base de datos de dispositivos.</li>
+        <li>La suscripción a un <b>topic</b> se gestiona a través del servicio de FCM (infraestructura de Google).</li>
+      </ul>
+      <h3>5.2 Control de notificaciones</h3>
+      <p>
+        Podés desactivar notificaciones desde la configuración de Android para la App.
+      </p>
+    </div>
+  </article>
+
+  <article class="card" id="derechos">
+    <div class="hd">
+      <h2>6) Tus opciones, retención y eliminación</h2>
+      <span class="tag">Control</span>
+    </div>
+    <div class="bd">
+      <h3>6.1 Eliminación de datos locales</h3>
+      <p>
+        Podés eliminar los datos locales desinstalando la App o borrando los datos de la aplicación desde Android.
+      </p>
+
+      <h3>6.2 Preferencias de anuncios</h3>
+      <p>
+        Podés gestionar preferencias de anuncios desde Android y servicios de Google (por ejemplo, restablecer el Advertising ID,
+        limitar personalización, etc., según disponibilidad del sistema).
+      </p>
+
+      <h3>6.3 Retención en servicios de terceros</h3>
+      <p>
+        Los datos procesados por Google (AdMob/Firebase) se rigen por sus políticas y prácticas de retención.
+        La App utiliza estos datos para medición y estabilidad; no los comercializa.
+      </p>
+
+      <h3>Privacidad de menores</h3>
+      <p>
+        La App no está dirigida a menores de 13 años y no busca recopilar información personal de menores.
+        Si creés que un menor nos proporcionó información personal, contactanos para revisarlo.
+      </p>
+    </div>
+  </article>
+
+  <article class="card" id="cambios">
+    <div class="hd">
+      <h2>7) Cambios a esta política</h2>
+      <span class="tag">Versionado</span>
+    </div>
+    <div class="bd">
+      <p>
+        Podemos actualizar esta política para reflejar cambios en la App o requisitos legales. Publicaremos la versión actualizada
+        en esta misma URL, indicando la nueva fecha de “Última actualización”.
+      </p>
+    </div>
+  </article>
+
+  <article class="card" id="contacto">
+    <div class="hd">
+      <h2>8) Contacto</h2>
+      <span class="tag">Soporte</span>
+    </div>
+    <div class="bd">
+      <p>Si tenés consultas sobre esta política o la App, escribinos:</p>
+      <ul>
+        <li>Email: <a href="mailto:glombastudio@gmail.com">glombastudio@gmail.com</a></li>
+        <li>Web: <a href="https://glombastudio.com" target="_blank" rel="noopener">https://glombastudio.com</a></li>
+      </ul>
+      <p class="mono" style="color:var(--muted2); margin-top:10px;">
+        Responsable: GlombaStudio — Survival: Bunker
+      </p>
+    </div>
+  </article>
+
+  <footer>
+    <div>© <span class="mono">2026</span> GlombaStudio. Política de Privacidad — Survival: Bunker.</div>
+  </footer>
+</main>
+</body>
+</html>
