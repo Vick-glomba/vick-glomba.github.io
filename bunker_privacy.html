@@ -32,29 +32,34 @@
 
         html,
         body {
-            height: 100%
+            height: 100%;
         }
 
-        /* Fondo GLOBAL continuo (no se “corta” dentro de las cards) */
         body {
             margin: 0;
             font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-            background: linear-gradient(180deg, var(--bg0), var(--bg1));
             color: var(--text);
             line-height: 1.6;
+
+            /* IMPORTANTE: sin background acá, para evitar “capas” duplicadas */
+            background: transparent;
         }
 
+        /* Fondo global ÚNICO: fijo y continuo */
         body::before {
             content: "";
             position: fixed;
             inset: 0;
             z-index: -1;
             pointer-events: none;
+
             background:
                 radial-gradient(900px 420px at 16% 4%, rgba(122, 167, 255, .20), transparent 55%),
                 radial-gradient(900px 420px at 78% 18%, rgba(107, 92, 255, .16), transparent 55%),
-                radial-gradient(900px 520px at 72% 84%, rgba(122, 167, 255, .08), transparent 58%);
+                radial-gradient(900px 520px at 72% 84%, rgba(122, 167, 255, .08), transparent 58%),
+                linear-gradient(180deg, var(--bg0), var(--bg1));
         }
+
 
         a {
             color: var(--accent);
@@ -65,14 +70,19 @@
             text-decoration: underline
         }
 
+        /* Header siempre visible */
         header {
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 50;
+            left: 0;
+            right: 0;
+            z-index: 999;
+
             backdrop-filter: saturate(1.15) blur(10px);
-            background: rgba(7, 10, 15, .62);
+            background: rgba(7, 10, 15, .72);
             border-bottom: 1px solid var(--border);
         }
+
 
         .header-inner {
             max-width: var(--max);
@@ -168,9 +178,14 @@
         main {
             max-width: var(--max);
             margin: 0 auto;
-            padding: 26px 18px 70px;
+
+            /* antes: padding:26px 18px 70px */
+            padding: calc(26px + 72px) 18px 70px;
+            /* 72px ≈ alto del header */
             position: relative;
+            scroll-margin-top: 92px;
         }
+
 
         .hero {
             padding: 18px 0 10px
@@ -222,11 +237,10 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             overflow: hidden;
-            background:
-                radial-gradient(700px 260px at 12% 0%, rgba(122, 167, 255, .12), transparent 55%),
-                radial-gradient(700px 260px at 88% 10%, rgba(107, 92, 255, .10), transparent 55%),
-                linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02)),
-                var(--panel);
+
+            /* Fondo de card liso (sin gradientes) */
+            background: rgba(15, 22, 34, .78);
+            scroll-margin-top: 92px;
         }
 
         .card .hd {
@@ -236,8 +250,11 @@
             justify-content: space-between;
             gap: 12px;
             border-bottom: 1px solid var(--border);
-            background: linear-gradient(180deg, rgba(122, 167, 255, .10), rgba(255, 255, 255, .02));
+
+            /* Header de card liso (sin gradiente) */
+            background: rgba(255, 255, 255, .02);
         }
+
 
         .card .hd h2 {
             margin: 0;
