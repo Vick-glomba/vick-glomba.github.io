@@ -1,647 +1,805 @@
 <!doctype html>
 <html lang="es" data-lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <title>Política de Privacidad | Survival: Bunker</title>
-  <meta name="description" content="Política de privacidad de Survival: Bunker (GlombaStudio)." />
-  <meta name="robots" content="index,follow" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Política de Privacidad | Survival: Bunker</title>
+    <meta name="description" content="Política de privacidad de Survival: Bunker (GlombaStudio)." />
+    <meta name="robots" content="index,follow" />
 
-  <style>
-    :root{
-      --bg0:#070a0f;
-      --bg1:#0b1018;
-      --panel:#0f1622;
-      --text:#e6edf6;
-      --muted:#a7b3c7;
-      --muted2:#7f8aa1;
-      --border:rgba(255,255,255,.08);
-      --shadow: 0 14px 42px rgba(0,0,0,.45);
-      --accent:#7aa7ff;
-      --accent2:#6b5cff;
-      --radius:18px;
-      --radius2:14px;
-      --max:980px;
-    }
+    <style>
+        :root {
+            --bg0: #070a0f;
+            --bg1: #0b1018;
+            --panel: #0f1622;
+            --text: #e6edf6;
+            --muted: #a7b3c7;
+            --muted2: #7f8aa1;
+            --border: rgba(255, 255, 255, .08);
+            --shadow: 0 14px 42px rgba(0, 0, 0, .45);
+            --accent: #7aa7ff;
+            --accent2: #6b5cff;
+            --radius: 18px;
+            --radius2: 14px;
+            --max: 980px;
+        }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+        * {
+            box-sizing: border-box
+        }
 
-    /* Fondo GLOBAL continuo (no se “corta” dentro de las cards) */
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      background: linear-gradient(180deg, var(--bg0), var(--bg1));
-      color:var(--text);
-      line-height:1.6;
-    }
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      pointer-events:none;
-      background:
-        radial-gradient(900px 420px at 16% 4%, rgba(122,167,255,.20), transparent 55%),
-        radial-gradient(900px 420px at 78% 18%, rgba(107,92,255,.16), transparent 55%),
-        radial-gradient(900px 520px at 72% 84%, rgba(122,167,255,.08), transparent 58%);
-    }
+        html,
+        body {
+            height: 100%
+        }
 
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
+        /* Fondo GLOBAL continuo (no se “corta” dentro de las cards) */
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+            background: linear-gradient(180deg, var(--bg0), var(--bg1));
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter:saturate(1.15) blur(10px);
-      background: rgba(7,10,15,.62);
-      border-bottom:1px solid var(--border);
-    }
-    .header-inner{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:14px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:180px;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 4px rgba(122,167,255,.12);
-    }
-    .brand b{letter-spacing:.2px}
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(900px 420px at 16% 4%, rgba(122, 167, 255, .20), transparent 55%),
+                radial-gradient(900px 420px at 78% 18%, rgba(107, 92, 255, .16), transparent 55%),
+                radial-gradient(900px 520px at 72% 84%, rgba(122, 167, 255, .08), transparent 58%);
+        }
 
-    nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    nav a{
-      color:var(--muted);
-      font-size:14px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid transparent;
-    }
-    nav a:hover{
-      color:var(--text);
-      border-color:var(--border);
-      background:rgba(255,255,255,.03);
-      text-decoration:none;
-    }
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
 
-    /* Toggle ES/EN (estilo similar a tu header) */
-    .lang{
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      border-radius:999px;
-      padding:6px;
-    }
-    .btn{
-      appearance:none;
-      border:1px solid transparent;
-      background:transparent;
-      color:var(--muted);
-      padding:7px 12px;
-      border-radius:999px;
-      font-weight:600;
-      cursor:pointer;
-      font-size:13px;
-      line-height:1;
-    }
-    .btn:hover{color:var(--text)}
-    .btn.active{
-      background:linear-gradient(135deg, rgba(122,167,255,.22), rgba(107,92,255,.18));
-      border-color:rgba(122,167,255,.28);
-      color:var(--text);
-    }
+        a:hover {
+            text-decoration: underline
+        }
 
-    main{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:26px 18px 70px;
-      position:relative;
-    }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: saturate(1.15) blur(10px);
+            background: rgba(7, 10, 15, .62);
+            border-bottom: 1px solid var(--border);
+        }
 
-    .hero{padding:18px 0 10px}
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      color:var(--muted);
-      font-size:13px;
-    }
-    h1{
-      margin:14px 0 8px;
-      font-size:38px;
-      line-height:1.15;
-      letter-spacing:-.6px;
-    }
-    .lead{
-      margin:0;
-      color:var(--muted);
-      max-width:860px;
-    }
-    .meta{
-      margin-top:14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      color:var(--muted2);
-      font-size:13px;
-    }
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+        .header-inner {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }
 
-    /* Cards: ahora tienen su propio “glow” interno y son más opacas.
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 180px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            box-shadow: 0 0 0 4px rgba(122, 167, 255, .12);
+        }
+
+        .brand b {
+            letter-spacing: .2px
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--muted);
+            font-size: 14px;
+            padding: 8px 10px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--text);
+            border-color: var(--border);
+            background: rgba(255, 255, 255, .03);
+            text-decoration: none;
+        }
+
+        /* Toggle ES/EN (estilo similar a tu header) */
+        .lang {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .03);
+            border-radius: 999px;
+            padding: 6px;
+        }
+
+        .btn {
+            appearance: none;
+            border: 1px solid transparent;
+            background: transparent;
+            color: var(--muted);
+            padding: 7px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 13px;
+            line-height: 1;
+        }
+
+        .btn:hover {
+            color: var(--text)
+        }
+
+        .btn.active {
+            background: linear-gradient(135deg, rgba(122, 167, 255, .22), rgba(107, 92, 255, .18));
+            border-color: rgba(122, 167, 255, .28);
+            color: var(--text);
+        }
+
+        main {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 26px 18px 70px;
+            position: relative;
+        }
+
+        .hero {
+            padding: 18px 0 10px
+        }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .03);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        h1 {
+            margin: 14px 0 8px;
+            font-size: 38px;
+            line-height: 1.15;
+            letter-spacing: -.6px;
+        }
+
+        .lead {
+            margin: 0;
+            color: var(--muted);
+            max-width: 860px;
+        }
+
+        .meta {
+            margin-top: 14px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            color: var(--muted2);
+            font-size: 13px;
+        }
+
+        .mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+        }
+
+        /* Cards: ahora tienen su propio “glow” interno y son más opacas.
        Esto evita que el glow global se vea “cortado” por el borde de la card. */
-    .card{
-      margin-top:14px;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      background:
-        radial-gradient(700px 260px at 12% 0%, rgba(122,167,255,.12), transparent 55%),
-        radial-gradient(700px 260px at 88% 10%, rgba(107,92,255,.10), transparent 55%),
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
-        var(--panel);
-    }
-    .card .hd{
-      padding:16px 18px;
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-      border-bottom:1px solid var(--border);
-      background: linear-gradient(180deg, rgba(122,167,255,.10), rgba(255,255,255,.02));
-    }
-    .card .hd h2{margin:0; font-size:18px; letter-spacing:-.2px}
-    .tag{
-      font-size:12px;
-      color:var(--muted);
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      padding:6px 10px;
-      border-radius:999px;
-      white-space:nowrap;
-    }
-    .card .bd{padding:16px 18px 18px}
-    .card .bd h3{margin:16px 0 8px; font-size:15px; letter-spacing:-.1px}
-    .card .bd p{margin:8px 0; color:var(--muted)}
-    .card .bd ul{margin:8px 0 0; padding-left:18px; color:var(--muted)}
-    .note{
-      margin-top:12px;
-      padding:12px 12px;
-      border-radius:var(--radius2);
-      border:1px dashed rgba(122,167,255,.28);
-      background: rgba(122,167,255,.06);
-      color:var(--muted);
-      font-size:13px;
-    }
+        .card {
+            margin-top: 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            background:
+                radial-gradient(700px 260px at 12% 0%, rgba(122, 167, 255, .12), transparent 55%),
+                radial-gradient(700px 260px at 88% 10%, rgba(107, 92, 255, .10), transparent 55%),
+                linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02)),
+                var(--panel);
+        }
 
-    footer{
-      margin-top:18px;
-      padding-top:18px;
-      border-top:1px solid var(--border);
-      color:var(--muted2);
-      font-size:13px;
-    }
+        .card .hd {
+            padding: 16px 18px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(122, 167, 255, .10), rgba(255, 255, 255, .02));
+        }
 
-    .pill-inline{
-      display:inline-flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      border-radius:999px;
-      padding:6px 10px;
-      color:var(--muted);
-      font-size:12px;
-    }
+        .card .hd h2 {
+            margin: 0;
+            font-size: 18px;
+            letter-spacing: -.2px
+        }
 
-    /* ES/EN rendering */
-    [data-lang]{display:none}
-    html[data-lang="es"] [data-lang="es"]{display:inline}
-    html[data-lang="en"] [data-lang="en"]{display:inline}
-    /* para bloques completos */
-    html[data-lang="es"] [data-lang-block="es"]{display:block}
-    html[data-lang="en"] [data-lang-block="en"]{display:block}
-    [data-lang-block]{display:none}
-  </style>
+        .tag {
+            font-size: 12px;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .03);
+            padding: 6px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .card .bd {
+            padding: 16px 18px 18px
+        }
+
+        .card .bd h3 {
+            margin: 16px 0 8px;
+            font-size: 15px;
+            letter-spacing: -.1px
+        }
+
+        .card .bd p {
+            margin: 8px 0;
+            color: var(--muted)
+        }
+
+        .card .bd ul {
+            margin: 8px 0 0;
+            padding-left: 18px;
+            color: var(--muted)
+        }
+
+        .note {
+            margin-top: 12px;
+            padding: 12px 12px;
+            border-radius: var(--radius2);
+            border: 1px dashed rgba(122, 167, 255, .28);
+            background: rgba(122, 167, 255, .06);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+            color: var(--muted2);
+            font-size: 13px;
+        }
+
+        .pill-inline {
+            display: inline-flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .03);
+            border-radius: 999px;
+            padding: 6px 10px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* ES/EN rendering */
+        body [data-lang] {
+            display: none;
+        }
+
+        html[data-lang="es"] body [data-lang="es"] {
+            display: inline;
+        }
+
+        html[data-lang="en"] body [data-lang="en"] {
+            display: inline;
+        }
+
+        /* para bloques completos */
+        [data-lang-block] {
+            display: none;
+        }
+
+        html[data-lang="es"] [data-lang-block="es"] {
+            display: block;
+        }
+
+        html[data-lang="en"] [data-lang-block="en"] {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
-<header>
-  <div class="header-inner">
-    <div class="brand">
-      <span class="dot" aria-hidden="true"></span>
-      <b>GlombaStudio</b>
-    </div>
+    <header>
+        <div class="header-inner">
+            <div class="brand">
+                <span class="dot" aria-hidden="true"></span>
+                <b>GlombaStudio</b>
+            </div>
 
-    <nav aria-label="Secciones">
-      <a href="#resumen"><span data-lang="es">Resumen</span><span data-lang="en">Summary</span></a>
-      <a href="#datos"><span data-lang="es">Datos</span><span data-lang="en">Data</span></a>
-      <a href="#ads"><span data-lang="es">Publicidad</span><span data-lang="en">Ads</span></a>
-      <a href="#firebase"><span data-lang="es">Firebase</span><span data-lang="en">Firebase</span></a>
-      <a href="#notificaciones"><span data-lang="es">Notificaciones</span><span data-lang="en">Notifications</span></a>
-      <a href="#derechos"><span data-lang="es">Tus opciones</span><span data-lang="en">Your choices</span></a>
-      <a href="#contacto"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
-    </nav>
+            <nav aria-label="Secciones">
+                <a href="#resumen"><span data-lang="es">Resumen</span><span data-lang="en">Summary</span></a>
+                <a href="#datos"><span data-lang="es">Datos</span><span data-lang="en">Data</span></a>
+                <a href="#ads"><span data-lang="es">Publicidad</span><span data-lang="en">Ads</span></a>
+                <a href="#firebase"><span data-lang="es">Firebase</span><span data-lang="en">Firebase</span></a>
+                <a href="#notificaciones"><span data-lang="es">Notificaciones</span><span
+                        data-lang="en">Notifications</span></a>
+                <a href="#derechos"><span data-lang="es">Tus opciones</span><span data-lang="en">Your choices</span></a>
+                <a href="#contacto"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+            </nav>
 
-    <div class="lang" aria-label="Idioma">
-      <div class="pill" role="group" aria-label="Seleccionar idioma">
-        <button class="btn active" id="btnES" type="button">ES</button>
-        <button class="btn" id="btnEN" type="button">EN</button>
-      </div>
-    </div>
-  </div>
-</header>
+            <div class="lang" aria-label="Idioma">
+                <div class="pill" role="group" aria-label="Seleccionar idioma">
+                    <button class="btn active" id="btnES" type="button">ES</button>
+                    <button class="btn" id="btnEN" type="button">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<main>
-  <section class="hero">
-    <span class="kicker">
-      <span class="dot" aria-hidden="true" style="width:8px;height:8px;box-shadow:none"></span>
-      <span data-lang="es">Documento legal — Política de Privacidad</span>
-      <span data-lang="en">Legal document — Privacy Policy</span>
-    </span>
+    <main>
+        <section class="hero">
+            <span class="kicker">
+                <span class="dot" aria-hidden="true" style="width:8px;height:8px;box-shadow:none"></span>
+                <span data-lang="es">Documento legal — Política de Privacidad</span>
+                <span data-lang="en">Legal document — Privacy Policy</span>
+            </span>
 
-    <h1>
-      <span data-lang="es">Política de Privacidad — Survival: Bunker</span>
-      <span data-lang="en">Privacy Policy — Survival: Bunker</span>
-    </h1>
+            <h1>
+                <span data-lang="es">Política de Privacidad — Survival: Bunker</span>
+                <span data-lang="en">Privacy Policy — Survival: Bunker</span>
+            </h1>
 
-    <p class="lead" data-lang-block="es">
-      Esta política describe cómo se maneja la información al usar <b>Survival: Bunker</b> (la “App”),
-      desarrollada por <b>GlombaStudio</b> (el “Desarrollador”).
-      La App no requiere crear una cuenta para jugar.
-    </p>
-    <p class="lead" data-lang-block="en">
-      This policy explains how information is handled when you use <b>Survival: Bunker</b> (the “App”),
-      developed by <b>GlombaStudio</b> (the “Developer”).
-      The App does not require an account to play.
-    </p>
+            <p class="lead" data-lang-block="es">
+                Esta política describe cómo se maneja la información al usar <b>Survival: Bunker</b> (la “App”),
+                desarrollada por <b>GlombaStudio</b> (el “Desarrollador”).
+                La App no requiere crear una cuenta para jugar.
+            </p>
+            <p class="lead" data-lang-block="en">
+                This policy explains how information is handled when you use <b>Survival: Bunker</b> (the “App”),
+                developed by <b>GlombaStudio</b> (the “Developer”).
+                The App does not require an account to play.
+            </p>
 
-    <div class="meta">
-      <span data-lang-block="es">Última actualización: <span class="mono">08/01/26</span></span>
-      <span data-lang-block="en">Last updated: <span class="mono">2026-01-08</span></span>
+            <div class="meta">
+                <span data-lang-block="es">Última actualización: <span class="mono">08/01/26</span></span>
+                <span data-lang-block="en">Last updated: <span class="mono">2026-01-08</span></span>
 
-      <span><span data-lang="es">Paquete</span><span data-lang="en">Package</span>: <span class="mono">com.glombastudio.bunker</span></span>
-      <span>Web: <a href="https://glombastudio.com" target="_blank" rel="noopener">https://glombastudio.com</a></span>
-    </div>
+                <span><span data-lang="es">Paquete</span><span data-lang="en">Package</span>: <span
+                        class="mono">com.glombastudio.bunker</span></span>
+                <span>Web: <a href="https://glombastudio.com" target="_blank"
+                        rel="noopener">https://glombastudio.com</a></span>
+            </div>
 
-    <div class="pill-inline" aria-label="Componentes">
-      <span class="chip"><span data-lang="es">Anuncios</span><span data-lang="en">Ads</span>: Google AdMob</span>
-      <span class="chip"><span data-lang="es">Analítica/Crash</span><span data-lang="en">Analytics/Crash</span>: Firebase</span>
-      <span class="chip"><span data-lang="es">Notificaciones</span><span data-lang="en">Notifications</span>: Firebase Cloud Messaging</span>
-    </div>
-  </section>
+            <div class="pill-inline" aria-label="Componentes">
+                <span class="chip"><span data-lang="es">Anuncios</span><span data-lang="en">Ads</span>: Google
+                    AdMob</span>
+                <span class="chip"><span data-lang="es">Analítica/Crash</span><span
+                        data-lang="en">Analytics/Crash</span>: Firebase</span>
+                <span class="chip"><span data-lang="es">Notificaciones</span><span data-lang="en">Notifications</span>:
+                    Firebase Cloud Messaging</span>
+            </div>
+        </section>
 
-  <article class="card" id="resumen">
-    <div class="hd">
-      <h2><span data-lang="es">1) Resumen</span><span data-lang="en">1) Summary</span></h2>
-      <span class="tag"><span data-lang="es">Lectura rápida</span><span data-lang="en">Quick read</span></span>
-    </div>
-    <div class="bd">
-      <ul data-lang-block="es">
-        <li>La App guarda progreso y configuraciones <b>localmente</b> en tu dispositivo.</li>
-        <li>La App muestra anuncios mediante <b>Google AdMob</b>. AdMob puede procesar identificadores publicitarios y datos técnicos para servir anuncios, medir rendimiento y prevenir fraude.</li>
-        <li>La App usa <b>Firebase</b> (Analytics y Crashlytics) para entender uso general y mejorar estabilidad.</li>
-        <li>La App puede usar <b>Firebase Cloud Messaging (FCM)</b> para notificaciones. No operamos servidor propio para esto; la entrega se realiza a través de la infraestructura de Google/Firebase.</li>
-        <li>No vendemos información personal.</li>
-      </ul>
+        <article class="card" id="resumen">
+            <div class="hd">
+                <h2><span data-lang="es">1) Resumen</span><span data-lang="en">1) Summary</span></h2>
+                <span class="tag"><span data-lang="es">Lectura rápida</span><span data-lang="en">Quick
+                        read</span></span>
+            </div>
+            <div class="bd">
+                <ul data-lang-block="es">
+                    <li>La App guarda progreso y configuraciones <b>localmente</b> en tu dispositivo.</li>
+                    <li>La App muestra anuncios mediante <b>Google AdMob</b>. AdMob puede procesar identificadores
+                        publicitarios y datos técnicos para servir anuncios, medir rendimiento y prevenir fraude.</li>
+                    <li>La App usa <b>Firebase</b> (Analytics y Crashlytics) para entender uso general y mejorar
+                        estabilidad.</li>
+                    <li>La App puede usar <b>Firebase Cloud Messaging (FCM)</b> para notificaciones. No operamos
+                        servidor propio para esto; la entrega se realiza a través de la infraestructura de
+                        Google/Firebase.</li>
+                    <li>No vendemos información personal.</li>
+                </ul>
 
-      <ul data-lang-block="en">
-        <li>The App stores progress and settings <b>locally</b> on your device.</li>
-        <li>The App shows ads using <b>Google AdMob</b>. AdMob may process advertising identifiers and technical data to serve ads, measure performance, and help prevent fraud.</li>
-        <li>The App uses <b>Firebase</b> (Analytics and Crashlytics) to understand general usage and improve stability.</li>
-        <li>The App may use <b>Firebase Cloud Messaging (FCM)</b> for notifications. We do not operate our own server for this; delivery is handled through Google/Firebase infrastructure.</li>
-        <li>We do not sell personal information.</li>
-      </ul>
-    </div>
-  </article>
+                <ul data-lang-block="en">
+                    <li>The App stores progress and settings <b>locally</b> on your device.</li>
+                    <li>The App shows ads using <b>Google AdMob</b>. AdMob may process advertising identifiers and
+                        technical data to serve ads, measure performance, and help prevent fraud.</li>
+                    <li>The App uses <b>Firebase</b> (Analytics and Crashlytics) to understand general usage and improve
+                        stability.</li>
+                    <li>The App may use <b>Firebase Cloud Messaging (FCM)</b> for notifications. We do not operate our
+                        own server for this; delivery is handled through Google/Firebase infrastructure.</li>
+                    <li>We do not sell personal information.</li>
+                </ul>
+            </div>
+        </article>
 
-  <article class="card" id="datos">
-    <div class="hd">
-      <h2><span data-lang="es">2) Información que se guarda o procesa</span><span data-lang="en">2) Information stored or processed</span></h2>
-      <span class="tag"><span data-lang="es">Transparencia</span><span data-lang="en">Transparency</span></span>
-    </div>
-    <div class="bd">
-      <h3><span data-lang="es">2.1 Datos de juego (almacenamiento local)</span><span data-lang="en">2.1 Game data (local storage)</span></h3>
+        <article class="card" id="datos">
+            <div class="hd">
+                <h2><span data-lang="es">2) Información que se guarda o procesa</span><span data-lang="en">2)
+                        Information stored or processed</span></h2>
+                <span class="tag"><span data-lang="es">Transparencia</span><span
+                        data-lang="en">Transparency</span></span>
+            </div>
+            <div class="bd">
+                <h3><span data-lang="es">2.1 Datos de juego (almacenamiento local)</span><span data-lang="en">2.1 Game
+                        data (local storage)</span></h3>
 
-      <p data-lang-block="es">
-        La App guarda en el dispositivo información necesaria para funcionar y mantener tu experiencia de juego.
-        Esto puede incluir progreso, estado del día, inventario/recursos, configuraciones y preferencias.
-      </p>
-      <p data-lang-block="en">
-        The App stores on your device information necessary to operate and maintain your gameplay experience.
-        This may include progress, daily state, inventory/resources, settings, and preferences.
-      </p>
+                <p data-lang-block="es">
+                    La App guarda en el dispositivo información necesaria para funcionar y mantener tu experiencia de
+                    juego.
+                    Esto puede incluir progreso, estado del día, inventario/recursos, configuraciones y preferencias.
+                </p>
+                <p data-lang-block="en">
+                    The App stores on your device information necessary to operate and maintain your gameplay
+                    experience.
+                    This may include progress, daily state, inventory/resources, settings, and preferences.
+                </p>
 
-      <p class="note" data-lang-block="es">
-        Estos datos quedan en tu dispositivo y se eliminan al desinstalar la App o al borrar sus datos desde Android.
-      </p>
-      <p class="note" data-lang-block="en">
-        This data remains on your device and is removed when you uninstall the App or clear its app data in Android settings.
-      </p>
+                <p class="note" data-lang-block="es">
+                    Estos datos quedan en tu dispositivo y se eliminan al desinstalar la App o al borrar sus datos desde
+                    Android.
+                </p>
+                <p class="note" data-lang-block="en">
+                    This data remains on your device and is removed when you uninstall the App or clear its app data in
+                    Android settings.
+                </p>
 
-      <h3><span data-lang="es">2.2 Datos técnicos y de uso (a través de Google: AdMob y Firebase)</span><span data-lang="en">2.2 Technical and usage data (via Google: AdMob and Firebase)</span></h3>
+                <h3><span data-lang="es">2.2 Datos técnicos y de uso (a través de Google: AdMob y Firebase)</span><span
+                        data-lang="en">2.2 Technical and usage data (via Google: AdMob and Firebase)</span></h3>
 
-      <p data-lang-block="es">
-        Para anuncios, medición y estabilidad, la App utiliza servicios de Google que pueden procesar información técnica y de uso.
-        Ejemplos típicos de datos tratados por estos servicios:
-      </p>
-      <p data-lang-block="en">
-        For ads, measurement, and stability, the App uses Google services that may process technical and usage information.
-        Typical examples of data handled by these services include:
-      </p>
+                <p data-lang-block="es">
+                    Para anuncios, medición y estabilidad, la App utiliza servicios de Google que pueden procesar
+                    información técnica y de uso.
+                    Ejemplos típicos de datos tratados por estos servicios:
+                </p>
+                <p data-lang-block="en">
+                    For ads, measurement, and stability, the App uses Google services that may process technical and
+                    usage information.
+                    Typical examples of data handled by these services include:
+                </p>
 
-      <ul data-lang-block="es">
-        <li><b>Identificadores</b>: identificador publicitario de Android (Advertising ID) y/o identificadores de instancia del SDK.</li>
-        <li><b>Datos del dispositivo</b>: modelo, versión de Android, idioma, zona horaria aproximada, datos de rendimiento.</li>
-        <li><b>Datos de uso</b>: eventos generales (por ejemplo, pantallas/acciones agregadas), métricas de interacción y sesiones.</li>
-        <li><b>Datos de diagnóstico</b>: informes de fallos (crashes), stack traces y señales de rendimiento para corregir errores.</li>
-        <li><b>Datos de red</b>: IP y datos técnicos necesarios para entregar anuncios y servicios (procesamiento por el proveedor).</li>
-      </ul>
-      <ul data-lang-block="en">
-        <li><b>Identifiers</b>: Android Advertising ID and/or SDK instance identifiers.</li>
-        <li><b>Device data</b>: model, Android version, language, approximate time zone, performance data.</li>
-        <li><b>Usage data</b>: general events (e.g., aggregated screens/actions), interaction metrics, and sessions.</li>
-        <li><b>Diagnostics</b>: crash reports, stack traces, and performance signals to fix errors.</li>
-        <li><b>Network data</b>: IP and technical data needed to deliver ads and services (processed by the provider).</li>
-      </ul>
+                <ul data-lang-block="es">
+                    <li><b>Identificadores</b>: identificador publicitario de Android (Advertising ID) y/o
+                        identificadores de instancia del SDK.</li>
+                    <li><b>Datos del dispositivo</b>: modelo, versión de Android, idioma, zona horaria aproximada, datos
+                        de rendimiento.</li>
+                    <li><b>Datos de uso</b>: eventos generales (por ejemplo, pantallas/acciones agregadas), métricas de
+                        interacción y sesiones.</li>
+                    <li><b>Datos de diagnóstico</b>: informes de fallos (crashes), stack traces y señales de rendimiento
+                        para corregir errores.</li>
+                    <li><b>Datos de red</b>: IP y datos técnicos necesarios para entregar anuncios y servicios
+                        (procesamiento por el proveedor).</li>
+                </ul>
+                <ul data-lang-block="en">
+                    <li><b>Identifiers</b>: Android Advertising ID and/or SDK instance identifiers.</li>
+                    <li><b>Device data</b>: model, Android version, language, approximate time zone, performance data.
+                    </li>
+                    <li><b>Usage data</b>: general events (e.g., aggregated screens/actions), interaction metrics, and
+                        sessions.</li>
+                    <li><b>Diagnostics</b>: crash reports, stack traces, and performance signals to fix errors.</li>
+                    <li><b>Network data</b>: IP and technical data needed to deliver ads and services (processed by the
+                        provider).</li>
+                </ul>
 
-      <p data-lang-block="es">
-        La App no te solicita nombre real, documento, dirección ni teléfono para jugar.
-      </p>
-      <p data-lang-block="en">
-        The App does not ask for your real name, government ID, address, or phone number to play.
-      </p>
-    </div>
-  </article>
+                <p data-lang-block="es">
+                    La App no te solicita nombre real, documento, dirección ni teléfono para jugar.
+                </p>
+                <p data-lang-block="en">
+                    The App does not ask for your real name, government ID, address, or phone number to play.
+                </p>
+            </div>
+        </article>
 
-  <article class="card" id="ads">
-    <div class="hd">
-      <h2><span data-lang="es">3) Publicidad (Google AdMob)</span><span data-lang="en">3) Advertising (Google AdMob)</span></h2>
-      <span class="tag"><span data-lang="es">Anuncios</span><span data-lang="en">Ads</span></span>
-    </div>
-    <div class="bd">
-      <p data-lang-block="es">
-        La App utiliza <b>Google AdMob</b> para mostrar anuncios, medir su rendimiento, limitar frecuencia y ayudar a prevenir fraude.
-        Para ello, AdMob puede procesar datos técnicos e identificadores (ver sección 2.2).
-      </p>
-      <p data-lang-block="en">
-        The App uses <b>Google AdMob</b> to show ads, measure performance, apply frequency capping, and help prevent fraud.
-        For this, AdMob may process technical data and identifiers (see section 2.2).
-      </p>
+        <article class="card" id="ads">
+            <div class="hd">
+                <h2><span data-lang="es">3) Publicidad (Google AdMob)</span><span data-lang="en">3) Advertising (Google
+                        AdMob)</span></h2>
+                <span class="tag"><span data-lang="es">Anuncios</span><span data-lang="en">Ads</span></span>
+            </div>
+            <div class="bd">
+                <p data-lang-block="es">
+                    La App utiliza <b>Google AdMob</b> para mostrar anuncios, medir su rendimiento, limitar frecuencia y
+                    ayudar a prevenir fraude.
+                    Para ello, AdMob puede procesar datos técnicos e identificadores (ver sección 2.2).
+                </p>
+                <p data-lang-block="en">
+                    The App uses <b>Google AdMob</b> to show ads, measure performance, apply frequency capping, and help
+                    prevent fraud.
+                    For this, AdMob may process technical data and identifiers (see section 2.2).
+                </p>
 
-      <h3><span data-lang="es">3.1 Anuncios personalizados y consentimiento</span><span data-lang="en">3.1 Personalized ads and consent</span></h3>
+                <h3><span data-lang="es">3.1 Anuncios personalizados y consentimiento</span><span data-lang="en">3.1
+                        Personalized ads and consent</span></h3>
 
-      <p data-lang-block="es">
-        Dependiendo de tu región y configuración, los anuncios pueden ser personalizados o no personalizados.
-        Podés gestionar preferencias de privacidad desde Android (por ejemplo, restablecer el Advertising ID o controles de anuncios, según la versión del sistema y servicios de Google).
-      </p>
-      <p data-lang-block="en">
-        Depending on your region and settings, ads may be personalized or non-personalized.
-        You can manage privacy preferences in Android (for example, reset your Advertising ID or adjust ad controls, depending on your OS version and Google services).
-      </p>
+                <p data-lang-block="es">
+                    Dependiendo de tu región y configuración, los anuncios pueden ser personalizados o no
+                    personalizados.
+                    Podés gestionar preferencias de privacidad desde Android (por ejemplo, restablecer el Advertising ID
+                    o controles de anuncios, según la versión del sistema y servicios de Google).
+                </p>
+                <p data-lang-block="en">
+                    Depending on your region and settings, ads may be personalized or non-personalized.
+                    You can manage privacy preferences in Android (for example, reset your Advertising ID or adjust ad
+                    controls, depending on your OS version and Google services).
+                </p>
 
-      <p class="note" data-lang-block="es">
-        En determinadas jurisdicciones (por ejemplo, EEE/Reino Unido), puede mostrarse un diálogo de consentimiento para anuncios y medición conforme a requisitos regulatorios.
-      </p>
-      <p class="note" data-lang-block="en">
-        In certain jurisdictions (for example, the EEA/UK), a consent dialog for ads and measurement may be shown to meet regulatory requirements.
-      </p>
+                <p class="note" data-lang-block="es">
+                    En determinadas jurisdicciones (por ejemplo, EEE/Reino Unido), puede mostrarse un diálogo de
+                    consentimiento para anuncios y medición conforme a requisitos regulatorios.
+                </p>
+                <p class="note" data-lang-block="en">
+                    In certain jurisdictions (for example, the EEA/UK), a consent dialog for ads and measurement may be
+                    shown to meet regulatory requirements.
+                </p>
 
-      <p>
-        <span data-lang="es">Política de Google</span><span data-lang="en">Google policy</span>:
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
-      </p>
-    </div>
-  </article>
+                <p>
+                    <span data-lang="es">Política de Google</span><span data-lang="en">Google policy</span>:
+                    <a href="https://policies.google.com/privacy" target="_blank"
+                        rel="noopener">https://policies.google.com/privacy</a>
+                </p>
+            </div>
+        </article>
 
-  <article class="card" id="firebase">
-    <div class="hd">
-      <h2><span data-lang="es">4) Firebase (Analytics y Crashlytics)</span><span data-lang="en">4) Firebase (Analytics and Crashlytics)</span></h2>
-      <span class="tag"><span data-lang="es">Métricas & estabilidad</span><span data-lang="en">Metrics & stability</span></span>
-    </div>
-    <div class="bd">
-      <h3><span data-lang="es">4.1 Firebase Analytics</span><span data-lang="en">4.1 Firebase Analytics</span></h3>
-      <p data-lang-block="es">
-        Usamos Firebase Analytics para entender el uso general de la App (por ejemplo, métricas agregadas de interacción y sesiones)
-        y así mejorar experiencia, balance y rendimiento.
-      </p>
-      <p data-lang-block="en">
-        We use Firebase Analytics to understand general App usage (for example, aggregated interaction and session metrics)
-        in order to improve experience, balance, and performance.
-      </p>
+        <article class="card" id="firebase">
+            <div class="hd">
+                <h2><span data-lang="es">4) Firebase (Analytics y Crashlytics)</span><span data-lang="en">4) Firebase
+                        (Analytics and Crashlytics)</span></h2>
+                <span class="tag"><span data-lang="es">Métricas & estabilidad</span><span data-lang="en">Metrics &
+                        stability</span></span>
+            </div>
+            <div class="bd">
+                <h3><span data-lang="es">4.1 Firebase Analytics</span><span data-lang="en">4.1 Firebase Analytics</span>
+                </h3>
+                <p data-lang-block="es">
+                    Usamos Firebase Analytics para entender el uso general de la App (por ejemplo, métricas agregadas de
+                    interacción y sesiones)
+                    y así mejorar experiencia, balance y rendimiento.
+                </p>
+                <p data-lang-block="en">
+                    We use Firebase Analytics to understand general App usage (for example, aggregated interaction and
+                    session metrics)
+                    in order to improve experience, balance, and performance.
+                </p>
 
-      <h3><span data-lang="es">4.2 Firebase Crashlytics</span><span data-lang="en">4.2 Firebase Crashlytics</span></h3>
-      <p data-lang-block="es">
-        Usamos Crashlytics para detectar errores, crashes y problemas de estabilidad. Esto puede incluir información técnica
-        del dispositivo y el estado del proceso al momento del fallo (por ejemplo, stack traces).
-      </p>
-      <p data-lang-block="en">
-        We use Crashlytics to detect errors, crashes, and stability issues. This may include technical device information
-        and the process state at the time of failure (for example, stack traces).
-      </p>
+                <h3><span data-lang="es">4.2 Firebase Crashlytics</span><span data-lang="en">4.2 Firebase
+                        Crashlytics</span></h3>
+                <p data-lang-block="es">
+                    Usamos Crashlytics para detectar errores, crashes y problemas de estabilidad. Esto puede incluir
+                    información técnica
+                    del dispositivo y el estado del proceso al momento del fallo (por ejemplo, stack traces).
+                </p>
+                <p data-lang-block="en">
+                    We use Crashlytics to detect errors, crashes, and stability issues. This may include technical
+                    device information
+                    and the process state at the time of failure (for example, stack traces).
+                </p>
 
-      <p>
-        <span data-lang="es">Privacidad de Firebase</span><span data-lang="en">Firebase privacy</span>:
-        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a>
-      </p>
-    </div>
-  </article>
+                <p>
+                    <span data-lang="es">Privacidad de Firebase</span><span data-lang="en">Firebase privacy</span>:
+                    <a href="https://firebase.google.com/support/privacy" target="_blank"
+                        rel="noopener">https://firebase.google.com/support/privacy</a>
+                </p>
+            </div>
+        </article>
 
-  <article class="card" id="notificaciones">
-    <div class="hd">
-      <h2><span data-lang="es">5) Notificaciones (Firebase Cloud Messaging)</span><span data-lang="en">5) Notifications (Firebase Cloud Messaging)</span></h2>
-      <span class="tag">FCM</span>
-    </div>
-    <div class="bd">
-      <p data-lang-block="es">
-        La App puede enviar notificaciones mediante <b>Firebase Cloud Messaging (FCM)</b>, por ejemplo, comunicados generales.
-        El mecanismo de entrega lo provee Google/Firebase.
-      </p>
-      <p data-lang-block="en">
-        The App may send notifications via <b>Firebase Cloud Messaging (FCM)</b>, for example, general announcements.
-        Delivery is provided through Google/Firebase infrastructure.
-      </p>
+        <article class="card" id="notificaciones">
+            <div class="hd">
+                <h2><span data-lang="es">5) Notificaciones (Firebase Cloud Messaging)</span><span data-lang="en">5)
+                        Notifications (Firebase Cloud Messaging)</span></h2>
+                <span class="tag">FCM</span>
+            </div>
+            <div class="bd">
+                <p data-lang-block="es">
+                    La App puede enviar notificaciones mediante <b>Firebase Cloud Messaging (FCM)</b>, por ejemplo,
+                    comunicados generales.
+                    El mecanismo de entrega lo provee Google/Firebase.
+                </p>
+                <p data-lang-block="en">
+                    The App may send notifications via <b>Firebase Cloud Messaging (FCM)</b>, for example, general
+                    announcements.
+                    Delivery is provided through Google/Firebase infrastructure.
+                </p>
 
-      <h3><span data-lang="es">5.1 Topics y tokens</span><span data-lang="en">5.1 Topics and tokens</span></h3>
-      <p data-lang-block="es">
-        Para entregar notificaciones, FCM utiliza un <b>token de mensajería</b> asociado a la instalación de la App en tu dispositivo.
-        Este token se gestiona como parte del servicio de FCM.
-      </p>
-      <p data-lang-block="en">
-        To deliver notifications, FCM uses a <b>messaging token</b> associated with the App installation on your device.
-        This token is managed as part of the FCM service.
-      </p>
+                <h3><span data-lang="es">5.1 Topics y tokens</span><span data-lang="en">5.1 Topics and tokens</span>
+                </h3>
+                <p data-lang-block="es">
+                    Para entregar notificaciones, FCM utiliza un <b>token de mensajería</b> asociado a la instalación de
+                    la App en tu dispositivo.
+                    Este token se gestiona como parte del servicio de FCM.
+                </p>
+                <p data-lang-block="en">
+                    To deliver notifications, FCM uses a <b>messaging token</b> associated with the App installation on
+                    your device.
+                    This token is managed as part of the FCM service.
+                </p>
 
-      <ul data-lang-block="es">
-        <li>El Desarrollador <b>no opera un servidor propio</b> para almacenar tokens ni administrar una base de datos de dispositivos.</li>
-        <li>La suscripción a un <b>topic</b> se gestiona a través del servicio de FCM (infraestructura de Google).</li>
-      </ul>
-      <ul data-lang-block="en">
-        <li>The Developer <b>does not operate its own server</b> to store tokens or maintain a device database.</li>
-        <li>Subscription to a <b>topic</b> is handled through the FCM service (Google infrastructure).</li>
-      </ul>
+                <ul data-lang-block="es">
+                    <li>El Desarrollador <b>no opera un servidor propio</b> para almacenar tokens ni administrar una
+                        base de datos de dispositivos.</li>
+                    <li>La suscripción a un <b>topic</b> se gestiona a través del servicio de FCM (infraestructura de
+                        Google).</li>
+                </ul>
+                <ul data-lang-block="en">
+                    <li>The Developer <b>does not operate its own server</b> to store tokens or maintain a device
+                        database.</li>
+                    <li>Subscription to a <b>topic</b> is handled through the FCM service (Google infrastructure).</li>
+                </ul>
 
-      <h3><span data-lang="es">5.2 Control de notificaciones</span><span data-lang="en">5.2 Notification controls</span></h3>
-      <p data-lang-block="es">
-        Podés desactivar notificaciones desde la configuración de Android para la App.
-      </p>
-      <p data-lang-block="en">
-        You can disable notifications for the App in Android settings.
-      </p>
-    </div>
-  </article>
+                <h3><span data-lang="es">5.2 Control de notificaciones</span><span data-lang="en">5.2 Notification
+                        controls</span></h3>
+                <p data-lang-block="es">
+                    Podés desactivar notificaciones desde la configuración de Android para la App.
+                </p>
+                <p data-lang-block="en">
+                    You can disable notifications for the App in Android settings.
+                </p>
+            </div>
+        </article>
 
-  <article class="card" id="derechos">
-    <div class="hd">
-      <h2><span data-lang="es">6) Tus opciones, retención y eliminación</span><span data-lang="en">6) Your choices, retention, and deletion</span></h2>
-      <span class="tag"><span data-lang="es">Control</span><span data-lang="en">Control</span></span>
-    </div>
-    <div class="bd">
-      <h3><span data-lang="es">6.1 Eliminación de datos locales</span><span data-lang="en">6.1 Deleting local data</span></h3>
-      <p data-lang-block="es">
-        Podés eliminar los datos locales desinstalando la App o borrando los datos de la aplicación desde Android.
-      </p>
-      <p data-lang-block="en">
-        You can delete local data by uninstalling the App or clearing the App’s data from Android settings.
-      </p>
+        <article class="card" id="derechos">
+            <div class="hd">
+                <h2><span data-lang="es">6) Tus opciones, retención y eliminación</span><span data-lang="en">6) Your
+                        choices, retention, and deletion</span></h2>
+                <span class="tag"><span data-lang="es">Control</span><span data-lang="en">Control</span></span>
+            </div>
+            <div class="bd">
+                <h3><span data-lang="es">6.1 Eliminación de datos locales</span><span data-lang="en">6.1 Deleting local
+                        data</span></h3>
+                <p data-lang-block="es">
+                    Podés eliminar los datos locales desinstalando la App o borrando los datos de la aplicación desde
+                    Android.
+                </p>
+                <p data-lang-block="en">
+                    You can delete local data by uninstalling the App or clearing the App’s data from Android settings.
+                </p>
 
-      <h3><span data-lang="es">6.2 Preferencias de anuncios</span><span data-lang="en">6.2 Ad preferences</span></h3>
-      <p data-lang-block="es">
-        Podés gestionar preferencias de anuncios desde Android y servicios de Google (por ejemplo, restablecer el Advertising ID,
-        limitar personalización, etc., según disponibilidad del sistema).
-      </p>
-      <p data-lang-block="en">
-        You can manage ad preferences in Android and Google services (for example, reset the Advertising ID,
-        limit personalization, etc., depending on system availability).
-      </p>
+                <h3><span data-lang="es">6.2 Preferencias de anuncios</span><span data-lang="en">6.2 Ad
+                        preferences</span></h3>
+                <p data-lang-block="es">
+                    Podés gestionar preferencias de anuncios desde Android y servicios de Google (por ejemplo,
+                    restablecer el Advertising ID,
+                    limitar personalización, etc., según disponibilidad del sistema).
+                </p>
+                <p data-lang-block="en">
+                    You can manage ad preferences in Android and Google services (for example, reset the Advertising ID,
+                    limit personalization, etc., depending on system availability).
+                </p>
 
-      <h3><span data-lang="es">6.3 Retención en servicios de terceros</span><span data-lang="en">6.3 Retention by third-party services</span></h3>
-      <p data-lang-block="es">
-        Los datos procesados por Google (AdMob/Firebase) se rigen por sus políticas y prácticas de retención.
-        La App utiliza estos datos para medición y estabilidad; no los comercializa.
-      </p>
-      <p data-lang-block="en">
-        Data processed by Google (AdMob/Firebase) is governed by their policies and retention practices.
-        The App uses this data for measurement and stability; it is not sold.
-      </p>
+                <h3><span data-lang="es">6.3 Retención en servicios de terceros</span><span data-lang="en">6.3 Retention
+                        by third-party services</span></h3>
+                <p data-lang-block="es">
+                    Los datos procesados por Google (AdMob/Firebase) se rigen por sus políticas y prácticas de
+                    retención.
+                    La App utiliza estos datos para medición y estabilidad; no los comercializa.
+                </p>
+                <p data-lang-block="en">
+                    Data processed by Google (AdMob/Firebase) is governed by their policies and retention practices.
+                    The App uses this data for measurement and stability; it is not sold.
+                </p>
 
-      <h3><span data-lang="es">Privacidad de menores</span><span data-lang="en">Children’s privacy</span></h3>
-      <p data-lang-block="es">
-        La App no está dirigida a menores de 13 años y no busca recopilar información personal de menores.
-        Si creés que un menor nos proporcionó información personal, contactanos para revisarlo.
-      </p>
-      <p data-lang-block="en">
-        The App is not directed to children under 13 and does not seek to collect personal information from children.
-        If you believe a child provided us with personal information, contact us so we can review it.
-      </p>
-    </div>
-  </article>
+                <h3><span data-lang="es">Privacidad de menores</span><span data-lang="en">Children’s privacy</span></h3>
+                <p data-lang-block="es">
+                    La App no está dirigida a menores de 13 años y no busca recopilar información personal de menores.
+                    Si creés que un menor nos proporcionó información personal, contactanos para revisarlo.
+                </p>
+                <p data-lang-block="en">
+                    The App is not directed to children under 13 and does not seek to collect personal information from
+                    children.
+                    If you believe a child provided us with personal information, contact us so we can review it.
+                </p>
+            </div>
+        </article>
 
-  <article class="card" id="cambios">
-    <div class="hd">
-      <h2><span data-lang="es">7) Cambios a esta política</span><span data-lang="en">7) Changes to this policy</span></h2>
-      <span class="tag"><span data-lang="es">Versionado</span><span data-lang="en">Versioning</span></span>
-    </div>
-    <div class="bd">
-      <p data-lang-block="es">
-        Podemos actualizar esta política para reflejar cambios en la App o requisitos legales. Publicaremos la versión actualizada
-        en esta misma URL, indicando la nueva fecha de “Última actualización”.
-      </p>
-      <p data-lang-block="en">
-        We may update this policy to reflect changes to the App or legal requirements. We will publish the updated version
-        at this same URL and indicate a new “Last updated” date.
-      </p>
-    </div>
-  </article>
+        <article class="card" id="cambios">
+            <div class="hd">
+                <h2><span data-lang="es">7) Cambios a esta política</span><span data-lang="en">7) Changes to this
+                        policy</span></h2>
+                <span class="tag"><span data-lang="es">Versionado</span><span data-lang="en">Versioning</span></span>
+            </div>
+            <div class="bd">
+                <p data-lang-block="es">
+                    Podemos actualizar esta política para reflejar cambios en la App o requisitos legales. Publicaremos
+                    la versión actualizada
+                    en esta misma URL, indicando la nueva fecha de “Última actualización”.
+                </p>
+                <p data-lang-block="en">
+                    We may update this policy to reflect changes to the App or legal requirements. We will publish the
+                    updated version
+                    at this same URL and indicate a new “Last updated” date.
+                </p>
+            </div>
+        </article>
 
-  <article class="card" id="contacto">
-    <div class="hd">
-      <h2><span data-lang="es">8) Contacto</span><span data-lang="en">8) Contact</span></h2>
-      <span class="tag"><span data-lang="es">Soporte</span><span data-lang="en">Support</span></span>
-    </div>
-    <div class="bd">
-      <p data-lang-block="es">Si tenés consultas sobre esta política o la App, escribinos:</p>
-      <p data-lang-block="en">If you have questions about this policy or the App, contact us:</p>
-      <ul>
-        <li>Email: <a href="mailto:glombastudio@gmail.com">glombastudio@gmail.com</a></li>
-        <li>Web: <a href="https://glombastudio.com" target="_blank" rel="noopener">https://glombastudio.com</a></li>
-      </ul>
-      <p class="mono" style="color:var(--muted2); margin-top:10px;" data-lang-block="es">
-        Responsable: GlombaStudio — Survival: Bunker
-      </p>
-      <p class="mono" style="color:var(--muted2); margin-top:10px;" data-lang-block="en">
-        Controller: GlombaStudio — Survival: Bunker
-      </p>
-    </div>
-  </article>
+        <article class="card" id="contacto">
+            <div class="hd">
+                <h2><span data-lang="es">8) Contacto</span><span data-lang="en">8) Contact</span></h2>
+                <span class="tag"><span data-lang="es">Soporte</span><span data-lang="en">Support</span></span>
+            </div>
+            <div class="bd">
+                <p data-lang-block="es">Si tenés consultas sobre esta política o la App, escribinos:</p>
+                <p data-lang-block="en">If you have questions about this policy or the App, contact us:</p>
+                <ul>
+                    <li>Email: <a href="mailto:glombastudio@gmail.com">glombastudio@gmail.com</a></li>
+                    <li>Web: <a href="https://glombastudio.com" target="_blank"
+                            rel="noopener">https://glombastudio.com</a></li>
+                </ul>
+                <p class="mono" style="color:var(--muted2); margin-top:10px;" data-lang-block="es">
+                    Responsable: GlombaStudio — Survival: Bunker
+                </p>
+                <p class="mono" style="color:var(--muted2); margin-top:10px;" data-lang-block="en">
+                    Controller: GlombaStudio — Survival: Bunker
+                </p>
+            </div>
+        </article>
 
-  <footer>
-    <div data-lang-block="es">© <span class="mono">2026</span> GlombaStudio. Política de Privacidad — Survival: Bunker.</div>
-    <div data-lang-block="en">© <span class="mono">2026</span> GlombaStudio. Privacy Policy — Survival: Bunker.</div>
-  </footer>
-</main>
+        <footer>
+            <div data-lang-block="es">© <span class="mono">2026</span> GlombaStudio. Política de Privacidad — Survival:
+                Bunker.</div>
+            <div data-lang-block="en">© <span class="mono">2026</span> GlombaStudio. Privacy Policy — Survival: Bunker.
+            </div>
+        </footer>
+    </main>
 
-<script>
-  (function () {
-    const btnES = document.getElementById('btnES');
-    const btnEN = document.getElementById('btnEN');
+    <script>
+        (function () {
+            const btnES = document.getElementById('btnES');
+            const btnEN = document.getElementById('btnEN');
 
-    function setLang(lang) {
-      document.documentElement.setAttribute('data-lang', lang);
-      btnES.classList.toggle('active', lang === 'es');
-      btnEN.classList.toggle('active', lang === 'en');
-      try { localStorage.setItem('gs_privacy_lang', lang); } catch (e) {}
-    }
+            function setLang(lang) {
+                document.documentElement.setAttribute('data-lang', lang);
+                btnES.classList.toggle('active', lang === 'es');
+                btnEN.classList.toggle('active', lang === 'en');
+                try { localStorage.setItem('gs_privacy_lang', lang); } catch (e) { }
+            }
 
-    btnES.addEventListener('click', () => setLang('es'));
-    btnEN.addEventListener('click', () => setLang('en'));
+            btnES.addEventListener('click', () => setLang('es'));
+            btnEN.addEventListener('click', () => setLang('en'));
 
-    // Inicial: preferencia guardada > navegador > ES
-    let initial = 'es';
-    try {
-      const saved = localStorage.getItem('gs_privacy_lang');
-      if (saved === 'es' || saved === 'en') initial = saved;
-      else {
-        const nav = (navigator.language || '').toLowerCase();
-        if (nav.startsWith('en')) initial = 'en';
-      }
-    } catch (e) {}
-    setLang(initial);
-  })();
-</script>
+            // Inicial: preferencia guardada > navegador > ES
+            let initial = 'es';
+            try {
+                const saved = localStorage.getItem('gs_privacy_lang');
+                if (saved === 'es' || saved === 'en') initial = saved;
+                else {
+                    const nav = (navigator.language || '').toLowerCase();
+                    if (nav.startsWith('en')) initial = 'en';
+                }
+            } catch (e) { }
+            setLang(initial);
+        })();
+    </script>
 </body>
+
 </html>
